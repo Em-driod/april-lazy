@@ -1,6 +1,6 @@
-let result = 0;
-
+let result = 0; //state
+let belo = document.getElementById("number")
 function increase() {
     result++;
-    document.getElementById("number").textContent = result;
+    belo.textContent = result;
 }

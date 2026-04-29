@@ -1,0 +1,22 @@
+<input type="text" id="email" placeholder="Enter email">
+<button onclick="check()">Submit</button>
+
+<p id="message"></p>
+
+<script>
+    function check() {
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message");
+
+        if (email === "") {
+            message.textContent = "Email is required";
+            message.style.color = "red";
+        } else if (!email.includes("@") || !email.includes(".")) {
+            message.textContent = "Invalid email";
+            message.style.color = "red";
+        } else {
+            message.textContent = "Submitted successfully";
+            message.style.color = "green";
+        }
+    }
+</script>

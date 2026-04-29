@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // More robust version that handles edge cases
+        const counterElement = document.getElementById('counterValue');
+        const decreaseBtn = document.getElementById('decreaseBtn');
+
+        let counter = parseInt(counterElement.textContent);
+
+        // Ensure counter is a valid number
+        if (isNaN(counter)) {
+            counter = 0;
+            counterElement.textContent = counter;
+        }
+
+        function decreaseCounter() {
+            if (counter > 0) {
+                counter--;
+                counterElement.textContent = counter;
+            } else {
+                // Optional: Show an alert or disable the button
+                console.log('Counter cannot go below 0');
+                decreaseBtn.disabled = true;
+            }
+        }
+
+        decreaseBtn.addEventListener('click', decreaseCounter);
+    </script>
+
+</body>
+
+</html>
+
+
+
+// More robust version that handles edge cases
+const counterElement = document.getElementById('counterValue');
+const decreaseBtn = document.getElementById('decreaseBtn');
+
+let counter = parseInt(counterElement.textContent);
+
+// Ensure counter is a valid number
+if (isNaN(counter)) {
+counter = 0;
+counterElement.textContent = counter;
+}
+
+function decreaseCounter() {
+if (counter > 0) {
+counter--;
+counterElement.textContent = counter;
+} else {
+// Optional: Show an alert or disable the button
+console.log('Counter cannot go below 0');
+decreaseBtn.disabled = true;
+}
+}
+
+decreaseBtn.addEventListener('click', decreaseCounter);
