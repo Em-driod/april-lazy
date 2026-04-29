@@ -2,24 +2,25 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
 }
 
 .assignment {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: cornflowerblue;
+  background-color: rgb(62, 134, 28);
   color: white;
-  height: 600px;
-  width: 600px;
+  height: 250px;
+  width: 300px;
   border: none;
   border-radius: 15px;
 }
 .assignment h1 {
   text-align: center;
+  color: black;
 }
 .assignment button {
-  margin-top: 3rem;
-  padding: 5px;
+  margin-top: 1rem;
+  padding: 10px;
 }
