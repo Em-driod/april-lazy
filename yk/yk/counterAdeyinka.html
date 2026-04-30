@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.talwindcss.com"></script>
+  <title>Counter</title>
+  <style>
+    .cont {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      border: 2px solid black;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(105, 133, 133);
+      margin: 100px auto;
+      padding: 30px;
+      gap: 50px;
+      border-radius: 15px;
+    }
+    #display {
+      width: 30%;
+      height: 70px;
+      border: 2px solid black;
+      border-radius: 10px;
+      text-align: center;
+      align-content: center;
+    }
+    .btn-cont {
+      display: flex;
+      color: white;
+      padding: 1opx;
+      gap: 40px;
+    }
+    button {
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <div id="display" >0</div>
+    <div class="btn-cont">
+    <button id="increment-btn" onclick="increase()">Increment</button>
+    <button id="clear-btn" onclick="clearr()">Clear</button>
+    <button id="decrement-btn" onclick="decrease()">Decrement</button>
+    </div>
+  </div>  
+  <script>
+    let result = 0;
+
+    function increase() {
+      result++;
+      document.getElementById('display').textContent= result;
+    }
+    function decrease() {
+      result--;
+      document.getElementById('display').textContent= result;
+    }
+    function clearr() {
+      result = 0;
+      document.getElementById('display').textContent= result;
+    }
+
+  </script>
+</body>
+</html>
