@@ -25,6 +25,9 @@ const sayHi = function() {
 
 
 
+
+
+
 3. Arrow function (modern)
 const sayHi = () => {
   console.log("Hi");
@@ -38,3 +41,11 @@ function toggle(1,3){
     1+3
 }
 toggle(2,7)
+
+
+
+
+
+
+
+

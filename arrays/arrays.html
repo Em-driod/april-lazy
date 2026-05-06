@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array + DOM</title>
+</head>
+
+<body>
+
+    <h2>My Shopping List</h2>
+
+    <input type="text" id="itemInput" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        // This is our ARRAY (data storage)
+        let items = ["Shoes", "Bag", "Watch"];
+
+        // This function displays array items on the page
+        function displayItems() {
+            const list = document.getElementById("list");
+
+            // Clear existing list (important)
+            list.innerHTML = "";
+
+            // Loop through array
+            items.forEach(function (item) {
+                let li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+        }
+
+        // This function adds a new item
+        function addItem() {
+            const input = document.getElementById("itemInput");
+            const value = input.value;
+
+            if (value === "") {
+                alert("Enter something");
+                return;
+            }
+
+            // Add to ARRAY
+            items.push(value);
+
+            // Clear input
+            input.value = "";
+
+            // Update UI
+            displayItems();
+        }
+
+        // Initial display
+        displayItems();
+    </script>
+
+</body>
+
+</html>
