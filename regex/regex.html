@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="email" placeholder="Enter email">
+    <button onclick="check()">Submit</button>
+
+    <p id="message"></p>
+
+
+    <script>
+
+        //caret (or circumflex accent)
+        function check() {
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message");
+
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (regex.test(email)) {                           //expression method(test)
+                message.textContent = "Valid Email";
+                message.style.color = "green";
+            } else {
+                message.textContent = "Invalid Email";
+                message.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

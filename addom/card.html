@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Premium Shop with Cart Logic</title>
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans">
+
+    <nav
+        class="bg-white/80 backdrop-blur-md shadow-sm py-4 px-8 flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
+        <div class="text-xl font-black tracking-tighter text-slate-900">PLATFORM.</div>
+
+        <ul class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+            <li class="hover:text-black cursor-pointer transition-colors">Shop</li>
+            <li class="hover:text-black cursor-pointer transition-colors">Collections</li>
+        </ul>
+
+        <div class="flex items-center gap-6">
+            <div class="relative cursor-pointer group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 text-slate-700 group-hover:text-black transition-colors">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <span id="cart-count"
+                    class="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-bold h-5 w-5 flex items-center justify-center rounded-full border-2 border-white scale-0 transition-transform duration-300">
+                    0
+                </span>
+            </div>
+            <button class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs
+                 font-semibold hover:bg-black transition-all">Account</button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div
+                class="card bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden h-[520px] flex flex-col border border-gray-100">
+                <div class="h-[60%] w-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Premium Tech Gear</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">High-performance hardware for modern
+                            workflows.</p>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <button
+                            class="add-to-cart-btn flex-1 bg-slate-900 text-white py-3 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-black transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="toggle-btn flex-1 bg-green-500 text-white py-3 rounded-2xl font-bold text-xs uppercase tracking-widest transition-colors duration-300">
+                            Active
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow
+                 overflow-hidden h-[520px] flex flex-col border border-gray-100">
+                <div class="h-[60%] w-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Studio Audio</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">Immersive sound quality for professional
+                            creators.</p>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <button class="add-to-cart-btn flex-1 bg-slate-900 text-white py-3 rounded-2xl font-bold 
+                            text-xs uppercase tracking-widest hover:bg-black transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+                        <button class="toggle-btn flex-1 bg-green-500 text-white py-3 rounded-2xl font-bold
+                             text-xs uppercase tracking-widest transition-colors duration-300">
+                            Active
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-white rounded-3xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden
+                 h-[520px] flex flex-col border border-gray-100">
+                <div class="h-[60%] w-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1526170315870-ef68460d288d?auto=format&fit=crop&q=80&w=800"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Minimal Optics</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">Precision lenses for daily clarity and
+                            style.</p>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <button class="add-to-cart-btn flex-1 bg-slate-900 text-white py-3 rounded-2xl 
+                            font-bold text-xs uppercase tracking-widest hover:bg-black transition-all active:scale-95">
+                            Add to Cart
+                        </button>
+                        <button class="toggle-btn flex-1 bg-green-500 text-white py-3 rounded-2xl
+                             font-bold text-xs uppercase tracking-widest transition-colors duration-300">
+                            Active
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // 1. SELECT ELEMENTS
+        const cartBadge = document.getElementById('cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        // 2. STATE VARIABLE
+        let count = 0;
+
+
+        // 3. CART LOGIC
+        function handleAddToCart() {
+            // Increment count
+            count++;
+
+            // Update the badge text
+            cartBadge.textContent = count;
+
+            // Visual cue: Show badge if it was hidden (scale from 0 to 1)
+            if (count > 0) {
+                cartBadge.classList.remove('scale-0');
+                cartBadge.classList.add('scale-100');
+            }
+
+            // Optional: Animate the badge on click
+            cartBadge.classList.add('animate-bounce');
+            setTimeout(() => cartBadge.classList.remove('animate-bounce'), 1000);
+        }
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', handleAddToCart);
+        });
+
+        // 4. COLOR TOGGLE LOGIC
+        function handleToggle() {
+            if (this.classList.contains('bg-green-500')) {
+                this.classList.replace('bg-green-500', 'bg-blue-600');
+                this.textContent = "pending";
+            } else {
+                this.classList.replace('bg-blue-600', 'bg-green-500');
+                this.textContent = "Active";
+            }
+        }
+
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', handleToggle);
+        });
+    </script>
+</body>
+
+</html>
